@@ -1,0 +1,15 @@
+C:\Practice\MentorshipWebApplicationBAL\bin\Debug\net6.0\MentorshipWebApplicationBAL.deps.json
+C:\Practice\MentorshipWebApplicationBAL\bin\Debug\net6.0\MentorshipWebApplicationBAL.dll
+C:\Practice\MentorshipWebApplicationBAL\bin\Debug\net6.0\MentorshipWebApplicationBAL.pdb
+C:\Practice\MentorshipWebApplicationBAL\bin\Debug\net6.0\MentorshipWebApplication.Repository.dll
+C:\Practice\MentorshipWebApplicationBAL\bin\Debug\net6.0\MentorshipWebApplication.Repository.pdb
+C:\Practice\MentorshipWebApplicationBAL\obj\Debug\net6.0\MentorshipWebApplicationBAL.csproj.AssemblyReference.cache
+C:\Practice\MentorshipWebApplicationBAL\obj\Debug\net6.0\MentorshipWebApplicationBAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Practice\MentorshipWebApplicationBAL\obj\Debug\net6.0\MentorshipWebApplicationBAL.AssemblyInfoInputs.cache
+C:\Practice\MentorshipWebApplicationBAL\obj\Debug\net6.0\MentorshipWebApplicationBAL.AssemblyInfo.cs
+C:\Practice\MentorshipWebApplicationBAL\obj\Debug\net6.0\MentorshipWebApplicationBAL.csproj.CoreCompileInputs.cache
+C:\Practice\MentorshipWebApplicationBAL\obj\Debug\net6.0\MentorshipWebApplicationBAL.csproj.CopyComplete
+C:\Practice\MentorshipWebApplicationBAL\obj\Debug\net6.0\MentorshipWebApplicationBAL.dll
+C:\Practice\MentorshipWebApplicationBAL\obj\Debug\net6.0\refint\MentorshipWebApplicationBAL.dll
+C:\Practice\MentorshipWebApplicationBAL\obj\Debug\net6.0\MentorshipWebApplicationBAL.pdb
+C:\Practice\MentorshipWebApplicationBAL\obj\Debug\net6.0\ref\MentorshipWebApplicationBAL.dll
