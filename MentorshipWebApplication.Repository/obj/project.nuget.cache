@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eTqtD/4swKKwsUFYD+my/xZGRcjfkOjDyHNBSl4tbJzKhyjiRnE5wgdRkui0wqkrvakrj9HE/94nxNT4jB2Plw==",
+  "dgSpecHash": "zJYXF0ckRyP+UbLQaBxCSwORl5tIWOeAF5VnMeMKTOLDWnD9SCAvLn2D/5n8kggv80MxEdOAE+wpKJ2h1OZwLA==",
   "success": true,
-  "projectFilePath": "C:\\Practice\\MentorshipWebApplication.Repository\\MentorshipWebApplication.Repository.csproj",
+  "projectFilePath": "D:\\Training\\BankAuditApi\\MentorshipWebApplication.Repository\\MentorshipWebApplication.Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cogdotnet1686\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\cogdotnet1686\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

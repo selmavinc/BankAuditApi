@@ -1918,11 +1918,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Practice\\MentorshipWebApplication.Repository\\MentorshipWebApplication.Repository.csproj",
+      "projectUniqueName": "D:\\Training\\BankAuditApi\\MentorshipWebApplication.Repository\\MentorshipWebApplication.Repository.csproj",
       "projectName": "MentorshipWebApplication.Repository",
-      "projectPath": "C:\\Practice\\MentorshipWebApplication.Repository\\MentorshipWebApplication.Repository.csproj",
+      "projectPath": "D:\\Training\\BankAuditApi\\MentorshipWebApplication.Repository\\MentorshipWebApplication.Repository.csproj",
       "packagesPath": "C:\\Users\\cogdotnet1686\\.nuget\\packages\\",
-      "outputPath": "C:\\Practice\\MentorshipWebApplication.Repository\\obj\\",
+      "outputPath": "D:\\Training\\BankAuditApi\\MentorshipWebApplication.Repository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

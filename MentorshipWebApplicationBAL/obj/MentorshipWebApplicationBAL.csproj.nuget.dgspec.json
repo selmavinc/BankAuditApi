@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Practice\\MentorshipWebApplicationBAL\\MentorshipWebApplicationBAL.csproj": {}
+    "D:\\Training\\BankAuditApi\\MentorshipWebApplicationBAL\\MentorshipWebApplicationBAL.csproj": {}
   },
   "projects": {
-    "C:\\Practice\\MentorshipWebApplication.Repository\\MentorshipWebApplication.Repository.csproj": {
+    "D:\\Training\\BankAuditApi\\MentorshipWebApplication.Repository\\MentorshipWebApplication.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Practice\\MentorshipWebApplication.Repository\\MentorshipWebApplication.Repository.csproj",
+        "projectUniqueName": "D:\\Training\\BankAuditApi\\MentorshipWebApplication.Repository\\MentorshipWebApplication.Repository.csproj",
         "projectName": "MentorshipWebApplication.Repository",
-        "projectPath": "C:\\Practice\\MentorshipWebApplication.Repository\\MentorshipWebApplication.Repository.csproj",
+        "projectPath": "D:\\Training\\BankAuditApi\\MentorshipWebApplication.Repository\\MentorshipWebApplication.Repository.csproj",
         "packagesPath": "C:\\Users\\cogdotnet1686\\.nuget\\packages\\",
-        "outputPath": "C:\\Practice\\MentorshipWebApplication.Repository\\obj\\",
+        "outputPath": "D:\\Training\\BankAuditApi\\MentorshipWebApplication.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -75,14 +75,14 @@
         }
       }
     },
-    "C:\\Practice\\MentorshipWebApplicationBAL\\MentorshipWebApplicationBAL.csproj": {
+    "D:\\Training\\BankAuditApi\\MentorshipWebApplicationBAL\\MentorshipWebApplicationBAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Practice\\MentorshipWebApplicationBAL\\MentorshipWebApplicationBAL.csproj",
+        "projectUniqueName": "D:\\Training\\BankAuditApi\\MentorshipWebApplicationBAL\\MentorshipWebApplicationBAL.csproj",
         "projectName": "MentorshipWebApplicationBAL",
-        "projectPath": "C:\\Practice\\MentorshipWebApplicationBAL\\MentorshipWebApplicationBAL.csproj",
+        "projectPath": "D:\\Training\\BankAuditApi\\MentorshipWebApplicationBAL\\MentorshipWebApplicationBAL.csproj",
         "packagesPath": "C:\\Users\\cogdotnet1686\\.nuget\\packages\\",
-        "outputPath": "C:\\Practice\\MentorshipWebApplicationBAL\\obj\\",
+        "outputPath": "D:\\Training\\BankAuditApi\\MentorshipWebApplicationBAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -105,8 +105,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Practice\\MentorshipWebApplication.Repository\\MentorshipWebApplication.Repository.csproj": {
-                "projectPath": "C:\\Practice\\MentorshipWebApplication.Repository\\MentorshipWebApplication.Repository.csproj"
+              "D:\\Training\\BankAuditApi\\MentorshipWebApplication.Repository\\MentorshipWebApplication.Repository.csproj": {
+                "projectPath": "D:\\Training\\BankAuditApi\\MentorshipWebApplication.Repository\\MentorshipWebApplication.Repository.csproj"
               }
             }
           }

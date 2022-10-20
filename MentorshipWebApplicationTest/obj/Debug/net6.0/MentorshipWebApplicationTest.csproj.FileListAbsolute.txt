@@ -362,3 +362,6 @@ C:\Practice\MentorshipWebApplicationTest\bin\Debug\net6.0\System.Web.WebPages.De
 C:\Practice\MentorshipWebApplicationTest\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
 C:\Practice\MentorshipWebApplicationTest\bin\Debug\net6.0\System.Web.WebPages.dll
 C:\Practice\MentorshipWebApplicationTest\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
+D:\Training\BankAuditApi\MentorshipWebApplicationTest\obj\Debug\net6.0\MentorshipWebApplicationTest.dll
+D:\Training\BankAuditApi\MentorshipWebApplicationTest\obj\Debug\net6.0\refint\MentorshipWebApplicationTest.dll
+D:\Training\BankAuditApi\MentorshipWebApplicationTest\obj\Debug\net6.0\MentorshipWebApplicationTest.pdb

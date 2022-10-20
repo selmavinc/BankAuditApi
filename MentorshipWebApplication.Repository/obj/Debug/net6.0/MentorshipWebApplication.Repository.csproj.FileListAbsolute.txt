@@ -10,3 +10,15 @@ C:\Practice\MentorshipWebApplication.Repository\obj\Debug\net6.0\MentorshipWebAp
 C:\Practice\MentorshipWebApplication.Repository\obj\Debug\net6.0\refint\MentorshipWebApplication.Repository.dll
 C:\Practice\MentorshipWebApplication.Repository\obj\Debug\net6.0\MentorshipWebApplication.Repository.pdb
 C:\Practice\MentorshipWebApplication.Repository\obj\Debug\net6.0\ref\MentorshipWebApplication.Repository.dll
+D:\Training\BankAuditApi\MentorshipWebApplication.Repository\bin\Debug\net6.0\MentorshipWebApplication.Repository.deps.json
+D:\Training\BankAuditApi\MentorshipWebApplication.Repository\bin\Debug\net6.0\MentorshipWebApplication.Repository.dll
+D:\Training\BankAuditApi\MentorshipWebApplication.Repository\bin\Debug\net6.0\MentorshipWebApplication.Repository.pdb
+D:\Training\BankAuditApi\MentorshipWebApplication.Repository\obj\Debug\net6.0\MentorshipWebApplication.Repository.csproj.AssemblyReference.cache
+D:\Training\BankAuditApi\MentorshipWebApplication.Repository\obj\Debug\net6.0\MentorshipWebApplication.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Training\BankAuditApi\MentorshipWebApplication.Repository\obj\Debug\net6.0\MentorshipWebApplication.Repository.AssemblyInfoInputs.cache
+D:\Training\BankAuditApi\MentorshipWebApplication.Repository\obj\Debug\net6.0\MentorshipWebApplication.Repository.AssemblyInfo.cs
+D:\Training\BankAuditApi\MentorshipWebApplication.Repository\obj\Debug\net6.0\MentorshipWebApplication.Repository.csproj.CoreCompileInputs.cache
+D:\Training\BankAuditApi\MentorshipWebApplication.Repository\obj\Debug\net6.0\MentorshipWebApplication.Repository.dll
+D:\Training\BankAuditApi\MentorshipWebApplication.Repository\obj\Debug\net6.0\refint\MentorshipWebApplication.Repository.dll
+D:\Training\BankAuditApi\MentorshipWebApplication.Repository\obj\Debug\net6.0\MentorshipWebApplication.Repository.pdb
+D:\Training\BankAuditApi\MentorshipWebApplication.Repository\obj\Debug\net6.0\ref\MentorshipWebApplication.Repository.dll
