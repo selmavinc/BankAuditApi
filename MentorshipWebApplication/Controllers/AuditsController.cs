@@ -9,6 +9,7 @@ using MentorshipWebApplication.Models;
 using MentorshipWebApplication.Repository.Entities;
 using MentorshipWebApplication.Repository.Repos;
 using Swashbuckle.AspNetCore.Annotations;
+using Newtonsoft.Json;
 
 namespace MentorshipWebApplication.Controllers
 {
@@ -18,12 +19,14 @@ namespace MentorshipWebApplication.Controllers
     {
         //private MentorshipWebApplicationBAL.serviceLayer _service;
         private readonly IAuditRepository _service;
+        private readonly ILogger<AuditsController> _logger;
 
 
 
-        public AuditsController(IAuditRepository service)
+        public AuditsController(IAuditRepository service, ILogger<AuditsController> logger)
         {
             _service = service;
+            _logger = logger;
         }
 
         //public AuditsController(MentorshipWebApplicationBAL.serviceLayer service)
@@ -39,6 +42,7 @@ namespace MentorshipWebApplication.Controllers
         {
             try
             {
+                _logger.LogInformation("Retrieve All Audits");
                 var audits = _service.GetAllAudits();
 
                 if (audits == null)
@@ -46,13 +50,15 @@ namespace MentorshipWebApplication.Controllers
                     return NotFound(new { message = "No Audit found" });
                 }
 
+                _logger.LogDebug($"The response for the get audits is {JsonConvert.SerializeObject(audits)}");
                 return Ok(audits);
 
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException ex)
             {
-
-                throw;
+                _logger.LogError($"Issue at controller: {ex.Message}");
+                //return StatusCode(500, ex.Message);
+                throw new Exception(ex.Message);
 
             }
             
@@ -64,9 +70,11 @@ namespace MentorshipWebApplication.Controllers
         [HttpPut("updateAudit/{id}/{examinerId}/{associateId?}/{auditDate}")]
         public async Task<ActionResult> updateAudit(int id, int examinerId, DateTime auditDate, int associateId=0)
         {
+            _logger.LogInformation("Modify Audit");
             if (!_service.AuditExists(id))
             {
-                return NotFound(new {message= "Audit does not exist" });
+                _logger.LogError($"Audit does not exist");
+                return NotFound(new {message= "Audit does not exist" });   
             }
             try
             {
@@ -74,18 +82,23 @@ namespace MentorshipWebApplication.Controllers
 
                 if (audits == false)
                 {
-                    return NotFound(new {message= "Some error occurred" });
+                    _logger.LogError($"Some error occured at context");
+                    return NotFound(new {message= "Some error occurred at context" });
                 }
                 else
                 {
+                    _logger.LogDebug($"Updated Status is {JsonConvert.SerializeObject(audits)}");
                     return Ok(new {message= "Updated" });
                 }
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-               
-                    throw;
                 
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+
+                _logger.LogError($"Issue at controller: {ex.Message}");
+                //return StatusCode(500, ex.Message);
+                throw new Exception(ex.Message);
+
             }
 
             
@@ -98,6 +111,7 @@ namespace MentorshipWebApplication.Controllers
         {
             try
             {
+                _logger.LogInformation("Retrieve All Audit Statuses");
                 var auditstatus = _service.GetAllAuditstatus();
 
                 if (auditstatus == null)
@@ -105,12 +119,16 @@ namespace MentorshipWebApplication.Controllers
                     return NotFound(new { message = "No Audit found" });
                 }
 
+                _logger.LogDebug($"The response for the get audit Status is {JsonConvert.SerializeObject(auditstatus)}");
                 return Ok(auditstatus);
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException ex)
             {
 
-                throw;
+                _logger.LogError($"Issue at controller: {ex.Message}");
+                //return StatusCode(500, ex.Message);
+                throw new Exception(ex.Message);
+
 
             }
 
@@ -124,19 +142,22 @@ namespace MentorshipWebApplication.Controllers
         {
             try
             {
+                _logger.LogInformation("Retrieve Audit by Branch ID");
                 var auditDetails = _service.GetAuditbyBranch(BranchId);
 
                 if (auditDetails == null)
                 {
                     return NotFound(new { message = "No Audit found" });
                 }
-
+                _logger.LogDebug($"The response for the get audit by Branch is {JsonConvert.SerializeObject(auditDetails)}");
                 return Ok(auditDetails);
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException ex)
             {
 
-                throw;
+                _logger.LogError($"Issue at controller: {ex.Message}");
+                //return StatusCode(500, ex.Message);
+                throw new Exception(ex.Message);
 
             }
 

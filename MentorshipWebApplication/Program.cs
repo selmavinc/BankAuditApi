@@ -4,6 +4,7 @@ using MentorshipWebApplication.Repository.Repos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -20,6 +21,18 @@ builder.Services.AddCors((setup) =>
         options.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin();
     });
 });
+var logger = new LoggerConfiguration()
+
+
+        .ReadFrom.Configuration(builder.Configuration)
+
+
+        .Enrich.FromLogContext()
+
+
+        .CreateLogger();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
 builder.Services.AddDbContext<AuditAppContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Dbconn") ?? throw new InvalidOperationException("Connection string 'Dbconn' not found.")));
 builder.Services.AddControllers();

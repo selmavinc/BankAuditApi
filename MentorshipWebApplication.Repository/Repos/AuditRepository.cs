@@ -78,9 +78,9 @@ namespace MentorshipWebApplication.Repository.Repos
 
                 return audits;
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                throw new NotImplementedException();
+                throw new NotImplementedException(ex.Message);
             }
             
         }

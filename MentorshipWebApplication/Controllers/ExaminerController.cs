@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace MentorshipWebApplication.Controllers
 {
@@ -13,9 +14,11 @@ namespace MentorshipWebApplication.Controllers
     {
         //private MentorshipWebApplicationBAL.serviceLayer _service;
         private readonly IAuditRepository _service;
-        public ExaminerController(IAuditRepository service)
+        private readonly ILogger<ExaminerController> _logger;
+        public ExaminerController(IAuditRepository service, ILogger<ExaminerController> logger)
         {
             _service = service;
+            _logger = logger;
         }
 
         //public ExaminerController()
@@ -30,19 +33,22 @@ namespace MentorshipWebApplication.Controllers
         {
             try
             {
+                _logger.LogInformation("Retrieve All Examiners");
                 var examiners = _service.GetAllExaminers();
 
                 if (examiners == null)
                 {
                     return NotFound(new { message = "No Examiner found" });
                 }
-
+                _logger.LogDebug($"The response for the get Examiners is {JsonConvert.SerializeObject(examiners)}");
                 return Ok(examiners);
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException ex)
             {
 
-                throw;
+                _logger.LogError($"Something went wrong: {ex.Message}");
+                //return StatusCode(500, ex.Message);
+                throw new Exception(ex.Message);
 
             }
 
@@ -54,19 +60,23 @@ namespace MentorshipWebApplication.Controllers
         {
             try
             {
+                _logger.LogInformation("Retrieve All active Examiners");
                 var examiners = _service.GetAllLeadAndAssocExaminers();
 
                 if (examiners == null)
                 {
                     return NotFound(new { message = "No Examiner found" });
                 }
+                _logger.LogDebug($"The response for the get Lead or associate examiners is {JsonConvert.SerializeObject(examiners)}");
 
                 return Ok(examiners);
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException ex)
             {
 
-                throw;
+                _logger.LogError($"Something went wrong: {ex.Message}");
+                //return StatusCode(500, ex.Message);
+                throw new Exception(ex.Message);
 
             }
 
@@ -77,30 +87,37 @@ namespace MentorshipWebApplication.Controllers
         [HttpPut]
         public async Task<ActionResult> EnableDisableExaminer(int id, bool value)
         {
+            _logger.LogInformation("Activate/Deactivate Examiners");
             if (!_service.ExaminerExists(id))
             {
+                _logger.LogError($"Examiner does not exist");
                 return NotFound(new {message= "Examiner does not exist" });
             }
             try
             {
-                var audits = await _service.setActiveOrInactive(id, value);
+                var isAdded = await _service.setActiveOrInactive(id, value);
 
-                if (audits == false)
+                if (isAdded == false)
                 {
+                    _logger.LogError($"Already updated as '\"{value}\"'.No Updation required");
                     return NotFound(new {message= "Already updated as '"+value+"'.No Updation required" });
                 }
                 else
                 {
+                    _logger.LogDebug($"Done Successfully");
+
                     if (value == true)
                         return Ok(new {message= "Successfully Activated" });
                     else
                         return Ok(new {message= "Successfully Deactivated" });
                 }
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException ex)
             {
 
-                throw;
+                _logger.LogError($"Something went wrong: {ex.Message}");
+                //return StatusCode(500, ex.Message);
+                throw new Exception(ex.Message);
 
             }
 
@@ -113,31 +130,38 @@ namespace MentorshipWebApplication.Controllers
         [HttpPost]
         public async Task<ActionResult> CreateExaminer(Examiner examinerModel)
         {
+            _logger.LogInformation("Add Examiner");
             if (_service.ExaminerExists(examinerModel.ExaminerId))
             {
+                _logger.LogError($"Examiner already exists");
                 return NotFound(new {message= "Examiner already exists" });
             }
             if (_service.ExaminerUsernameExists(examinerModel.Username))
             {
+                _logger.LogError($"Username already exists");
                 return NotFound(new { message = "Username already exists" });
             }
             try
             {
-                var audits = await _service.AddnewExaminer(examinerModel);
+                var examiner = await _service.AddnewExaminer(examinerModel);
 
-                if (audits == null)
+                if (examiner == null)
                 {
+                    _logger.LogError($"Error occurred while adding Examiner");
                     return NotFound(new {message= "Error occurred while adding Examiner" });
                 }
                 else
                 {
+                    _logger.LogDebug($"The response for create examiners is {JsonConvert.SerializeObject(examiner)}");
                     return Ok(new {message = "Added Successfully" });
                 }
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException ex)
             {
 
-                throw;
+                _logger.LogError($"Something went wrong: {ex.Message}");
+                //return StatusCode(500, ex.Message);
+                throw new Exception(ex.Message);
 
             }
 
