@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using NUnit.Framework;
+using Serilog;
+using System;
 
 namespace MentorshipWebApplication.Controllers
 {
@@ -12,9 +15,12 @@ namespace MentorshipWebApplication.Controllers
     [ApiController]
     public class ExaminerController : ControllerBase
     {
+        //using Dependency Injection to inject the interface into examiner controller
         //private MentorshipWebApplicationBAL.serviceLayer _service;
         private readonly IAuditRepository _service;
         private readonly ILogger<ExaminerController> _logger;
+        //our controller has a dependency on the repository logic through that injected interface.
+        //Logging is injected using a Dependency Injection principle using Interface ILogger
         public ExaminerController(IAuditRepository service, ILogger<ExaminerController> logger)
         {
             _service = service;
@@ -33,14 +39,14 @@ namespace MentorshipWebApplication.Controllers
         {
             try
             {
-                _logger.LogInformation("Retrieve All Examiners");
+                _logger.LogInformation("Retrieve All Examiners");   // first invocation
                 var examiners = _service.GetAllExaminers();
 
                 if (examiners == null)
                 {
                     return NotFound(new { message = "No Examiner found" });
                 }
-                _logger.LogDebug($"The response for the get Examiners is {JsonConvert.SerializeObject(examiners)}");
+                _logger.LogDebug($"The response for the get Examiners is {JsonConvert.SerializeObject(examiners)}"); // second invocation
                 return Ok(examiners);
             }
             catch (DbUpdateConcurrencyException ex)
@@ -153,7 +159,8 @@ namespace MentorshipWebApplication.Controllers
                 else
                 {
                     _logger.LogDebug($"The response for create examiners is {JsonConvert.SerializeObject(examiner)}");
-                    return Ok(new {message = "Added Successfully" });
+                    return Ok(new { message = "Added Successfully" });
+                    //return Ok(examiner);// for unit test uncomment this code and comment above code
                 }
             }
             catch (DbUpdateConcurrencyException ex)
