@@ -58,6 +58,7 @@ namespace MentorshipWebApplication.Controllers
             {
                 _logger.LogError($"Issue at controller: {ex.Message}");
                 //return StatusCode(500, ex.Message);
+                //return StatusCode(HttpContext.Response.StatusCode, ex.Message);
                 throw new Exception(ex.Message);
 
             }
